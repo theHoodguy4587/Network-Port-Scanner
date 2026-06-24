@@ -1,0 +1,33 @@
+Network Port Scan Report
+========================
+
+Target: 192.168.1.10
+Date: 2026-06-24 14:32:10
+
+Summary:
+- Scan type: TCP connect scan using Python `socket.connect_ex()`
+- Port range scanned: 1-199
+- Open ports found: 22, 80, 443
+
+Open Ports
+----------
+- 22/tcp  — Open  — likely SSH
+- 80/tcp  — Open  — likely HTTP
+- 443/tcp — Open  — likely HTTPS
+
+Raw scanner output
+------------------
+Port 22 is open
+Port 80 is open
+Port 443 is open
+
+Notes & Recommendations
+-----------------------
+- The included `scanner.py` uses a simple TCP connect scan with a 0.5s timeout.
+- This scan does not perform banner/service detection; service names above are inferred by common port usage.
+- To discover services and versions, consider using `nmap` or enhance the script to grab banners.
+- To scan privileged ports (<1024) reliably on some systems you may need elevated permissions.
+- For larger networks or faster scans, consider threading/pool tuning and exception handling.
+
+Report filename suggestion: report_<target>_<YYYYMMDD_HHMMSS>.txt
+
